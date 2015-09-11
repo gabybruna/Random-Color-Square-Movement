@@ -1,0 +1,42 @@
+//las variables de x
+float right = 5.5;
+float speed = 2.5;
+int direccion_en_x = 2;
+
+//las variables de y
+float right_on_y = 5.5;
+float speed_on_y = 5.5;
+int direccion_en_y = 2;
+
+void setup(){
+// ojo Gee comentar y cambiar cada variable
+//luego pasarlo a ellipses
+//luego cambiar donde pega en bordes x y y
+//luego entender los random en colores
+//luego cambiar el tamano de los cuadrados
+//luego cambiar el speed
+
+  
+  size (500,500);
+
+}
+
+void draw (){
+  right = right + (speed* direccion_en_x);
+  right_on_y = right_on_y + (speed_on_y* direccion_en_y);
+  
+  if(right > 500 || right < 0){
+    direccion_en_x = direccion_en_x *-1;
+  }  
+    if(right_on_y > 500 || right_on_y < 0){
+    direccion_en_y = direccion_en_y *-1;
+}
+
+  println("esta es direccion_en_x: " + direccion_en_x);
+    println("esta es right" + right);
+  //rect(right,10,10,10);
+  fill (random(50,400),random(50,400),random(50,400));
+  rect(right, right_on_y,20,20);
+   rect(right, right_on_y,right,20);
+  rect(right, right_on_y,20,right);
+}
